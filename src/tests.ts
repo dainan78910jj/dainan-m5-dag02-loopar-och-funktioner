@@ -1,10 +1,25 @@
 import { test, assertEqual } from "./testlib";
 import {
-  formateraPris, momsDel, medRabatt, ärÖppet, summa, snitt, största, upprepa, kvittorad, dubbla, ärJämnt,
+  formateraPris,
+  momsDel,
+  medRabatt,
+  ärÖppet,
+  summa,
+  snitt,
+  största,
+  upprepa,
+  kvittorad,
+  dubbla,
+  ärJämnt,
 } from "./funktioner";
 
 // Tester för funktioner.ts. Ändra inte den här filen.
 // Läs gärna testerna: de visar exakt vad varje funktion ska göra.
+
+// formateraPris()
+// The input parameter must be a number n, and the output should be the string "n kr".
+// If the input is an integer, the output is that integer.
+// If the input is a decimal, the output must be formatted to two decimal places, using a comma as the decimal separator.
 
 test("formateraPris: heltal", () => {
   assertEqual(formateraPris(35), "35 kr");
