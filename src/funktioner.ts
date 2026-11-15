@@ -6,18 +6,47 @@
 //    Heltal utan decimaler: formateraPris(35) ger "35 kr".
 //    Decimaltal med två decimaler och komma: formateraPris(91.8) ger "91,80 kr".
 export function formateraPris(pris: number): string {
-  // TODO
+  if (pris < 0) {
+    throw new Error("Invalid price");
+  }
+
+  if (Number.isInteger(pris)) {
+    return `${pris} kr`;
+  } else {
+    return `${pris.toFixed(2).replace(".", ",")} kr`;
+  }
 }
 
 // 2. Momsdelen av ett pris med 12 % moms (fiktiv sats), avrundad till två decimaler.
 //    momsDel(112) ger 12.
+function toPrice(value: number): number {
+  if (Number.isInteger(value)) {
+    return value;
+  } else {
+    return Math.round(value * 100) / 100;
+  }
+}
+
 export function momsDel(pris: number): number {
-  // TODO
+  if (pris < 0) {
+    throw new Error("Invalid price");
+  }
+
+  let value = (pris / 112) * 12;
+  return toPrice(value);
 }
 
 // 3. Priset efter rabatt i procent. medRabatt(100, 10) ger 90.
 export function medRabatt(pris: number, procent: number): number {
-  // TODO
+  if (pris < 0) {
+    throw new Error("Invalid price");
+  }
+  if (procent < 0 || procent > 100) {
+    throw new Error("Invalid procent");
+  }
+
+  let value = pris - (pris * procent) / 100;
+  return toPrice(value);
 }
 
 // 4. Är kaféet öppet? Vardagar 7–18, helger (lördag, söndag) 9–16.
