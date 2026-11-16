@@ -1,5 +1,5 @@
 // Dag 2, del 1: Loopar. Resultatet syns i Console (F12).
-
+import "./scope.ts";
 import { summa } from "./funktioner";
 
 // UPPGIFT 1: skriv ut talen 1 till 10, ett per rad, med en for-loop.

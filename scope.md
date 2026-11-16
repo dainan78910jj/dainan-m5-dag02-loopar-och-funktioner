@@ -11,8 +11,8 @@ const kafe = "Kardemumma";
 
 function visaNamn() {
   const recept = "hemligt";
-  console.log(kafe);       // gissning:
-  console.log(recept);     // gissning:
+  console.log(kafe); // gissning:
+  console.log(recept); // gissning:
 }
 visaNamn();
 
@@ -22,15 +22,15 @@ function ökaRäknare() {
 }
 ökaRäknare();
 ökaRäknare();
-console.log(räknare);      // gissning:
+console.log(räknare); // gissning:
 
 function lokal() {
   let räknare = 100;
   räknare++;
   return räknare;
 }
-console.log(lokal());      // gissning:
-console.log(räknare);      // gissning:
+console.log(lokal()); // gissning:
+console.log(räknare); // gissning:
 
 // Ta bort kommentaren på nästa rad och läs felet:
 // console.log(recept);    // gissning:
@@ -49,3 +49,9 @@ Fyll i med egna ord:
 - En variabel som skapas inuti en funktion kan ... utanför funktionen.
 - En funktion kan se variabler som ligger ... den.
 - `let i` i en for-loop lever ...
+
+Svaret kommer:
+
+- En variabel som skapas inuti en funktion kan inte nås (eller användas) utanför funktionen.
+- En funktion kan se variabler som ligger utanför (eller ovanför) den.
+- `let i` i en for-loop lever bara inuti själva loopen (under tiden loopen körs).
