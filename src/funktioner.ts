@@ -72,35 +72,74 @@ export function ärÖppet(veckodag: string, klockslag: number): boolean {
 
 // 5. Summan av alla tal i listan, med en loop. summa([1, 2, 3]) ger 6.
 export function summa(tal: number[]): number {
-  // TODO
+  let sum = 0;
+  for (let i = 0; i < tal.length; i++) {
+    sum += tal[i];
+  }
+  return sum;
 }
 
 // 6. Medelvärdet. snitt([2, 4, 6]) ger 4. Tom lista ger 0.
 export function snitt(tal: number[]): number {
-  // TODO
+  if (tal.length === 0) {
+    return 0;
+  } else {
+    let sum = 0;
+    let averageValue = 0;
+    for (let i = 0; i < tal.length; i++) {
+      sum += tal[i];
+    }
+    averageValue = sum / tal.length;
+    return averageValue;
+  }
 }
 
 // 7. Det största talet, med en loop. största([3, 9, 4]) ger 9. Tom lista ger undefined.
 export function största(tal: number[]): number | undefined {
-  // TODO
+  // solution 1
+  if (tal.length === 0) {
+    return undefined;
+  } else {
+    let maxValue = tal[0];
+    for (let i = 1; i < tal.length; i++) {
+      if (tal[i] > maxValue) {
+        maxValue = tal[i];
+      }
+    }
+    return maxValue;
+  }
+
+  // solution 2
+  // let maxValue = undefined;
+  // for (const t of tal) {
+  //   if (maxValue === undefined || maxValue < t) {
+  //     maxValue = t;
+  //   }
+  // }
+  // return maxValue;
 }
 
 // 8. Upprepa en text. upprepa("ab", 3) ger "ababab". Använd en loop.
 export function upprepa(text: string, antal: number): string {
-  // TODO
+  let res = "";
+  for (let i = 0; i < antal; i++) {
+    res += text;
+  }
+  return res;
 }
 
 // 9. En kvittorad. kvittorad("Kaffe", 2, 32) ger "2 x Kaffe: 64 kr".
 //    Använd formateraPris från uppgift 1.
 export function kvittorad(namn: string, antal: number, pris: number): string {
-  // TODO
+  let prisVal = formateraPris(pris * antal);
+  return `${antal} x ${namn}: ${prisVal}`;
 }
 
 // 10. Pilfunktioner. Skriv dem själv med const och =>.
 //     dubbla(4) ger 8. ärJämnt(4) ger true.
-export const dubbla = (n: number): number => {
-  // TODO
-};
-export const ärJämnt = (n: number): boolean => {
-  // TODO
-};
+export const dubbla = (n: number): number => 2 * n;
+
+export const ärJämnt = (n: number): boolean => n % 2 == 0;
+
+// Skriv en kommentar som förklarar skillnaden mellan function dubbla(n) { ... } och pilfunktionen.
+// There is no difference between the two in terms of basic functionality; arrow functions simply offer a more concise syntax.
